@@ -1,0 +1,364 @@
+%% cv.tex
+%% Copyright 2023 Qi Zhang
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Zeyi Fan.
+%
+% This work consists of only the file cv.tex
+
+\documentclass{article}
+\usepackage[top=.4in, bottom=.0in, left=3in, right=0.4in,marginparwidth=2.5in]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{pstricks}
+\usepackage{amssymb}
+\usepackage{paralist}
+\usepackage{verbatim}
+
+%\usepackage[pdfauthor={Qi Zhang},
+            %pdftitle={Qi Zhsng's Resume},
+            %pdfkeywords={}]{hyperref}
+\usepackage{hyperref}
+
+\definecolor{mygray}{gray}{0.95}
+\definecolor{lightdark}{gray}{0.55}
+\definecolor{dark}{gray}{0.3}
+\definecolor{skillbg}{gray}{0.7}
+
+\newcommand{\amount}{5.7in}
+\setcounter{section}{-1}
+
+\linespread{1.2}
+\pagenumbering{gobble}
+
+\renewcommand{\labelitemi}{$\blacksquare$}
+\renewenvironment{itemize}[1]{\begin{compactitem}#1}{\end{compactitem}}
+
+% Helpers
+
+\newcommand\twodigits[1]{%
+   \ifnum#1<10 0#1\else #1\fi
+}
+
+%\newcommand\hl[1]{{\ralewaysb #1}}
+\newcommand\hl[1]{#1}
+
+
+% Fonts
+
+\newfontfamily\raleway{Raleway}
+\newfontfamily\ralewaym{Raleway Medium}
+\newfontfamily\ralewaysb{Raleway SemiBold}
+\newfontfamily\ralewayb{Raleway Bold}
+\newfontfamily\ralewayeb{Raleway ExtraBold}
+\newfontfamily\ralewaybb{Raleway Black}
+
+\setmainfont{Raleway}
+
+
+% Styles
+\newcommand{\name}[2]{
+    \begin{center}
+        \Huge{
+            \ralewayeb{#1 #2}
+        }
+    \end{center}
+}
+
+\newcommand{\tagline}[1]{
+    \begin{center}
+        \large{
+            \color{dark}
+            \ralewaysb{#1}
+        }
+        \vspace{.2em}
+    \end{center}
+}
+
+\renewcommand{\thesection}{\twodigits{\arabic{section}}.}
+
+\titleformat{\section}
+[hang]
+{\ralewaysb\large\color{dark}}
+{}
+{.0em}
+{}
+[{\titlerule[0.8pt]}]
+
+\titlespacing*{\section}{0pt}{4pt}{10pt}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0mm}
+
+\newcommand{\contactline}[2]{
+    \ralewaysb{#1} & \raleway{#2}
+}
+
+\newcommand{\skill}[2]{
+    \vspace{.2em}
+    \ralewayb{#1}
+
+    \psset{xunit=0.197\linewidth, yunit=5pt}
+    \begin{pspicture}[showgrid=false](5,1)
+        \psline[linecolor=skillbg](0,0.5)(5,0.5)
+        \psline[linecolor=skillbg,arrows=|-|](1,0.5)(2,0.5)
+        \psline[linecolor=skillbg,arrows=|-|](3,0.5)(4,0.5)
+        \psline[linecolor=skillbg,arrows=-|](0,0.5)(5,0.5)
+
+        \psline[linecolor=black,arrows=|-|](0,0.5)(#2,0.5)
+    \end{pspicture}
+}
+
+\newcommand{\block}[3]{
+    {\large\ralewayb #1}
+
+    \ralewaym{\color{lightdark}#2}
+
+    \raleway{#3}
+}
+
+\newcommand{\leftblock}[3]{
+   {\ralewayb #1}
+
+    \ralewaym{\color{lightdark}#2}
+    \raleway{#3}
+   
+}
+
+\begin{document}
+
+% background
+
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[mygray] (current page.south west) rectangle ([xshift=-\amount]current page.north east);
+\end{tikzpicture}
+
+% Side Bar
+
+\begin{textblock}{58.5}(6,7.7)
+    \name{Qi}{Zhang}
+
+    %\tagline{Student \& Developer}
+
+    \section{Goal}
+
+    \color{dark}
+
+    To obtain a full-time position in software engineering available immediately with open work permit
+
+    \section{Contacts}
+
+    \renewcommand{\arraystretch}{1.1}
+
+    \begin{tabular}{rl}
+        \contactline{Phone}{(206)-372-0229} \\
+        \contactline{Email}{zqxms@hotmail.com} \\
+        \contactline{Location}{Bellevue, WA, US} \\
+    \end{tabular}
+
+    \section{Education}
+    \leftblock {Northeastern University} { } {
+        \begin{itemize}[-]
+          \item 01/19 - 12/20
+          \item MS in Computer Science
+          \item San Jose, CA
+        \end{itemize}
+    }
+    \vspace{.5em}
+    
+    \leftblock {University of Washington} { } {
+        \begin{itemize}[-]
+          \item 09/14 - 03/16
+          \item MS in Mechanical Engineering
+          \item Seattle, WA
+        \end{itemize}
+    }
+    \vspace{.5em}
+    
+    \leftblock {Huazhong University of Science and Technology} { } {
+        \begin{itemize}[-]
+          \item 09/10 - 06/14
+          \item BS in Materials Processing and 
+          Control Engineering
+          \item Wuhan, China
+        \end{itemize}
+    }
+    \vspace{.5em}
+    
+    
+    \section{Skills \& Abilities}
+    
+    \leftblock {Programming Languages} {}{
+    \begin{itemize}[-]
+          \item Java
+          \item Scala
+          \item Ruby
+          \item Python
+          \item Go
+          \item Kotlin
+          \item HTML
+          \item CSS
+          \item Javascript
+          \item C/C++
+        \end{itemize}
+    }
+    
+    \leftblock {Software Skills} {}{
+    \begin{itemize}[-]
+          \item Ruby on Rails
+          \item SpringBoot
+          \item React
+          \item MySQL
+          \item MongoDB
+          \item Node.js
+        \end{itemize}
+    }
+    
+
+\end{textblock}
+
+% Main
+
+\vspace{-25pt}  % Change this value to adjust the position of the right
+
+\section{Work Experience}
+
+\block{Software Engineer}
+{Flexport | Bellevue, WA | November 2022 - November 2023 | Transfer from China}
+{
+    \begin{itemize}[-]
+        \item Developed work management platform with Scala Zio and Java Springboot on backend and React on frontend
+        \item Led a transformative project to enhance user feedback ticketing experience with improved satisfaction and efficiency 
+        \item Created the generic work item workspace for the forwarding application and established the best practice for work item workspace
+        \item Took part in creating the simple queue service for work items processor to improve work item processing
+        \item Created gRPC apis to communicate between services on various messages
+        \item Work with operators to address critical needs and provide improvements
+    \end{itemize}
+}
+
+\vspace{.5em}
+
+\block{Software Engineer}
+{Flexport | Shanghai, China | October 2021 - November 2022}
+{
+    \begin{itemize}[-]
+        \item Developed communication platform with Ruby on Rails on backend and React on frontend
+        \item Executed the implementation of Notification Settings page in collaboration with designer and backend engineer
+        \item Implemented product improvement features to make user interaction easier
+        \item Took part in brown bag session to share knowledge
+    \end{itemize}
+}
+
+\vspace{.5em}
+
+\begin{comment}
+\vspace{.5em}
+\block{Full-Stack Software Engineer Intern}
+{SocialChian Inc. | Palo Alto, CA | January 2020 - April 2020}
+{
+
+\begin{itemize}[-]
+    \item Worked on a team of 5 responsible for design and improvement the blockchain app using Ruby on Rails
+    \item Conducted rails programming to implement user records and user authority management
+    \item Implemented front-end UI/UX with React redux to improve user experience and reduced page loading time
+    \item Provided Analytics results about app usages, advertisement feedbacks with Google Analytics
+    \item Code review for peers in team
+\end{itemize}
+}
+
+\section{Projects}
+
+\block{Client-Server Poker with Human-Computer Battling }{}{
+    \begin{itemize}[-]
+        \item Developed a Doudizhu Poker Game by Python using TCP communication and Artificial Intelligence
+        \item Established TCP connection between client and server to communicate players’ actions and responses
+        \item Compared different search algorithms in computer player 1 to get the best card play under current game
+        \item Train computer player 2 with Reinforcement Learning for card play 
+        \item Successfully achieved 100\% card play accuracy 
+        \item Successfully get 70\% of computer winning the game
+    \end{itemize}
+}
+
+\vspace{.5em}
+
+\block{Personal Blog Website}{}{
+    \begin{itemize}[-]
+        \item Developed a full-stack web application for users to write and post blogs online.
+        \item Designed the backend model with Node.js and built the database with MongoDB
+        \item Architected and implemented the interactive web frontend workflow using Bootstrap
+        \item Successfully deployed it to Amazon AWS
+    \end{itemize}
+}
+
+\vspace{.5em}
+
+\block{Music Recommendation System}{}{
+    \begin{itemize}[-]
+        \item Developed a music recommendation system using content-based filtering and collaborative filtering by Python
+        \item Converted the music file to picture format to fit with the CNN architecture 
+        \item Applied ReLU activation function to all layers to introduce non-linearity
+        \item Evaluated the model performance by calculating AUC score
+        \item Successfully predicted 90\% of the verification dataset
+    \end{itemize}
+}
+\end{comment}
+
+\section{Projects}
+\block{Forwarding Application Notification Setting }{}{
+    \begin{itemize}[-]
+        \item Took part in the notification setting page frontend part for both user notification setting and company notification setting with React
+        \item Worked with design, backend engineer and product managers to create the setting pages
+        \item Used GraphQL to handle the interaction between frontend and backend
+        \item Led the frontend team by providing mentorship to other members and holding daily one-on-ones to track progress and answer questions
+        \item Validated the setting actions before sending them to backend
+    \end{itemize}
+}
+\vspace{.5em}   
+
+\block {User Feedback Ticket Experience Improvement } {}{
+    \begin{itemize}[-]
+        \item Investigated and implemented the Atlassian Jira API with Forwarding App to allow users create tickets directly in Forwarding App
+        \item Improved the frontend ticket creation process and corresponding backend API
+        \item Successfully simplified feedback ticket creation experience
+    \end{itemize}
+}
+
+\vspace{.5em}
+
+\block{Generic Workspace for Forwarding Application} {} {
+    \begin{itemize}[-]
+        \item Created generic workspace for the work item to provide the infrastructures of the whole company in creating workspace
+        \item Worked with designer to create the frontend using React
+        \item Created generic confirmation GraphQL to save the operations
+        \item Created various functions for operators, eg. document upload 
+    \end{itemize}
+} 
+
+\vspace{.5em}
+
+\block{Work Item Automation} {} {
+    \begin{itemize}[-]
+        \item Took part in the work item automation project together with other eng teams
+        \item Implemented the automated customs documentation by extracting information from previous work items.
+        \item Implemented error handling process and alerts for failed automation work item
+        \item Established a standardized process for automating work items
+    \end{itemize}
+
+
+
+}
+
+\end{document}
