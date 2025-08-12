@@ -17,5 +17,5 @@ Seeking a **Backend/Full-Stack Engineer** role (Open to **H1B transfer**) to:
 - Collaborate with product teams on **system-level innovation**  
 
 ## 🌐 Connect  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](linkedin.com/in/qzhang92)  
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=flat&logo=gmail)](mailto:zqxms@hotmail.com)  
+LinkedIn: [linkedin.com/in/qzhang92](linkedin.com/in/qzhang92)  
+Email: zqxms@hotmail.com
