@@ -1,0 +1,251 @@
+%% cv.tex
+%% Copyright 2023 Qi Zhang
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Zeyi Fan.
+%
+% This work consists of only the file cv.tex
+
+\documentclass{article}
+\usepackage[top=.4in, bottom=.0in, left=3in, right=0.4in,marginparwidth=2.5in]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{pstricks}
+\usepackage{amssymb}
+\usepackage{paralist}
+\usepackage{verbatim}
+
+%\usepackage[pdfauthor={Qi Zhang},
+            %pdftitle={Qi Zhsng's Resume},
+            %pdfkeywords={}]{hyperref}
+\usepackage{hyperref}
+
+\definecolor{mygray}{gray}{0.95}
+\definecolor{lightdark}{gray}{0.55}
+\definecolor{dark}{gray}{0.3}
+\definecolor{skillbg}{gray}{0.7}
+
+\newcommand{\amount}{5.7in}
+\setcounter{section}{-1}
+
+\linespread{1.2}
+\pagenumbering{gobble}
+
+\renewcommand{\labelitemi}{$\blacksquare$}
+\renewenvironment{itemize}[1]{\begin{compactitem}#1}{\end{compactitem}}
+
+% Helpers
+
+\newcommand\twodigits[1]{%
+   \ifnum#1<10 0#1\else #1\fi
+}
+
+%\newcommand\hl[1]{{\ralewaysb #1}}
+\newcommand\hl[1]{#1}
+
+
+% Fonts
+
+\newfontfamily\raleway{Raleway}
+\newfontfamily\ralewaym{Raleway Medium}
+\newfontfamily\ralewaysb{Raleway SemiBold}
+\newfontfamily\ralewayb{Raleway Bold}
+\newfontfamily\ralewayeb{Raleway ExtraBold}
+\newfontfamily\ralewaybb{Raleway Black}
+
+\setmainfont{Raleway}
+
+
+% Styles
+\newcommand{\name}[2]{
+    \begin{center}
+        \Huge{
+            \ralewayeb{#1 #2}
+        }
+    \end{center}
+}
+
+\newcommand{\tagline}[1]{
+    \begin{center}
+        \large{
+            \color{dark}
+            \ralewaysb{#1}
+        }
+        \vspace{.2em}
+    \end{center}
+}
+
+\renewcommand{\thesection}{\twodigits{\arabic{section}}.}
+
+\titleformat{\section}
+[hang]
+{\ralewaysb\large\color{dark}}
+{}
+{.0em}
+{}
+[{\titlerule[0.8pt]}]
+
+\titlespacing*{\section}{0pt}{4pt}{10pt}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0mm}
+
+\newcommand{\contactline}[2]{
+    \ralewaysb{#1} & \raleway{#2}
+}
+
+\newcommand{\skill}[2]{
+    \vspace{.2em}
+    \ralewayb{#1}
+
+    \psset{xunit=0.197\linewidth, yunit=5pt}
+    \begin{pspicture}[showgrid=false](5,1)
+        \psline[linecolor=skillbg](0,0.5)(5,0.5)
+        \psline[linecolor=skillbg,arrows=|-|](1,0.5)(2,0.5)
+        \psline[linecolor=skillbg,arrows=|-|](3,0.5)(4,0.5)
+        \psline[linecolor=skillbg,arrows=-|](0,0.5)(5,0.5)
+
+        \psline[linecolor=black,arrows=|-|](0,0.5)(#2,0.5)
+    \end{pspicture}
+}
+
+\newcommand{\block}[3]{
+    {\large\ralewayb #1}
+
+    \ralewaym{\color{lightdark}#2}
+
+    \raleway{#3}
+}
+
+\newcommand{\leftblock}[3]{
+   {\ralewayb #1}
+
+    \ralewaym{\color{lightdark}#2}
+    \raleway{#3}
+   
+}
+
+\begin{document}
+
+% 修改后的背景设置 - 灰色在右侧
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[mygray] ([xshift=\amount]current page.south west) rectangle (current page.north east);
+\end{tikzpicture}
+
+% 主内容区（左侧3/4宽度）
+\begin{textblock}{125}(10,15)
+    \name{Qi}{Zhang}
+
+    %\tagline{Student \& Developer}
+    \vspace{2em}
+
+    \section{Summary}
+
+    \color{dark}
+
+    Software Engineer with 2+ years of experience building scalable, high-perf-ormance web applications across logistics, communication, and workflow automation. Skilled in designing distributed systems, leading cross-functional initiatives, and mentoring team members. Seeking a full-time backend or full-stack role (H1B transfer available) to architect impactful solutions and drive business value.
+\vspace{2em}
+
+
+
+    \section{Work Experience}
+
+    \block{Flexport | Bellevue, WA | October 2021 - November 2023}
+
+
+\leftblock{Software Engineer}
+{
+    \begin{itemize}[-]
+         \item Built work management platform with Scala Zio and Java Springboot on backend and React on frontend
+        \item Architected a shipment process template for the forwarding application, establishing best practices that improved development speed for new shipment workflows by \textasciitilde~30\%.
+        \item Designed and implemented an Amazon Simple Queue Service for shipment processors, improving throughput and reducing processing latency by \textasciitilde~20\%.
+        \item Developed gRPC APIs for inter-service communication, enabling reliable and low-latency message exchange across distributed systems.
+        \item Collaborated with operations teams to deliver critical features, improving workflow efficiency and reducing manual processing time by \textasciitilde~25\%.
+        \item Integrated Atlassian Jira API into the Forwarding App, enabling in-app ticket creation and reducing average ticket creation time from ~15 minutes to under 10 minute.
+        \item Automated customs documentation extraction from prior work items, standardizing automation workflows and introducing error handling with proactive alerts, reducing failure rates by \textasciitilde~15\%.
+    \end{itemize}
+}
+
+\vspace{.5em}
+
+\leftblock{Software Engineer}
+{
+    \begin{itemize}[-]
+        
+        \item Built the shipment communication platform using Ruby on Rails and React to streamline internal and external messaging.
+        \item Led the frontend implementation of a notification settings module for both individual and company accounts using React and GraphQL; mentored junior engineers and established validation logic to prevent backend errors.
+        \item Presented technical knowledge sessions (“brown bag”) to share best practices across the engineering team.
+        \item Shipped multiple UX enhancements, simplifying user interactions and improving satisfaction scores in user surveys.
+
+    \end{itemize}
+}
+
+
+
+\end{textblock}
+
+% 右侧灰色边栏（1/4宽度）
+\begin{textblock}{60}(150,20)  % 调整到右侧位置
+    \section{Contacts}
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{rl}
+        \contactline{Phone}{(206) 372-0229} \\
+        \contactline{Email}{\href{mailto:zqxms@hotmail.com}{zqxms@hotmail.com}} \\
+        \contactline{Location}{Bellevue, WA} \\
+        \contactline{GitHub}{\href{https://github.com/qzhang92}{@qzhang92}} \\
+        \contactline{LinkedIn}{\href{https://linkedin.com/in/qzhang92}{/in/qzhang92}} \\
+    \end{tabular}
+
+    \section{Education}
+    \leftblock{Northeastern University}{}{
+        \begin{itemize}[-]
+          \item 01/2019 - 12/2020
+          \item MS in Computer Science
+          \item San Jose, CA
+        \end{itemize}
+    }
+    
+    \section{Skills \& Abilities}
+    \leftblock{Programming Languages}{}{
+        \begin{itemize}[-]
+          \item Java \item Scala \item Ruby
+          \item Python \item Go \item Kotlin \item HTML \item React \item C/C++
+        \end{itemize}
+    }
+
+    \leftblock{Frameworks \& Tools} {}{
+       \begin{itemize}[-]
+          \item Spring Boot \item Ruby on Rails \item React \item Node.js \item ZIO \item gRPC \item GraphQL \item Atlassian Jira API
+       \end{itemize}
+    }
+
+    \leftblock{Databases \& Cloud}{}{
+        \begin{itemize}[-]
+            \item MySQL \item  PostgreSQL \item MongoDB \item AWS (S3, Lambda, SQS) \item Redis
+        \end{itemize}
+    }
+
+    \leftblock{Practices} {} {
+         \begin {itemize}[-] {
+             \item  System design  \item distributed systems  \item API development \item automation \item agile development \item mentorship
+         }
+         \end{itemize}
+    }
+\end{textblock}
+
+\end{document}
+
+
