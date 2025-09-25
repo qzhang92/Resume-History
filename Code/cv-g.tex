@@ -140,231 +140,109 @@
 
 \begin{document}
 
-% background
-
+% 修改后的背景设置 - 灰色在右侧
 \begin{tikzpicture}[remember picture,overlay]
-  \fill[mygray] (current page.south west) rectangle ([xshift=-\amount]current page.north east);
+  \fill[mygray] ([xshift=\amount]current page.south west) rectangle (current page.north east);
 \end{tikzpicture}
 
-% Side Bar
-
-\begin{textblock}{58.5}(6,7.7)
-    \name{Qi}{Zhang}
+% 主内容区（左侧3/4宽度）
+\begin{textblock}{125}(10,15)
+    \name{Deepak}{Kalia}
 
     %\tagline{Student \& Developer}
+    \vspace{2em}
 
-    \section{Goal}
+    \section{Summary}
 
     \color{dark}
 
-    To obtain a full-time position in software engineering available immediately with H1b transfer available
+    Software Engineer with 2+ years of experience building scalable, high-perf-ormance web applications across logistics, communication, and workflow automation. Skilled in designing distributed systems, leading cross-functional initiatives, and mentoring team members. Seeking a full-time backend or full-stack role (H1B transfer available) to architect impactful solutions and drive business value.
+\vspace{2em}
 
+
+
+    \section{Work Experience}
+
+    \block{Flexport | Bellevue, WA | October 2021 - November 2023}
+
+
+\leftblock{Software Engineer}
+{
+    \begin{itemize}[-]
+        \item Built work management platform with Scala Zio and Java Springboot on backend and React on frontend
+        \item Architected a shipment process template for the forwarding application, establishing best practices that improved development speed for new shipment workflows by \textasciitilde~30\%.
+        \item Designed and implemented an Amazon Simple Queue Service for shipment processors, improving throughput and reducing processing latency by \textasciitilde~20\%.
+        \item Developed gRPC APIs for inter-service communication, enabling reliable and low-latency message exchange across distributed systems.
+        \item Collaborated with operations teams to deliver critical features, improving workflow efficiency and reducing manual processing time by \textasciitilde~25\%.
+        \item Integrated Atlassian Jira API into the Forwarding App, enabling in-app ticket creation and reducing average ticket creation time from ~15 minutes to under 10 minute.
+        \item Automated customs documentation extraction from prior work items, standardizing automation workflows and introducing error handling with proactive alerts, reducing failure rates by \textasciitilde~15\%.
+    \end{itemize}
+}
+
+\vspace{.5em}
+
+\leftblock{Software Engineer}
+{
+    \begin{itemize}[-]
+        
+        \item Built the shipment communication platform using Ruby on Rails and React to streamline internal and external messaging.
+        \item Led the frontend implementation of a notification settings module for both individual and company accounts using React and GraphQL
+        \item Mentored junior engineers and established validation logic to prevent backend errors.
+        \item Presented technical knowledge sessions (“brown bag”) to share best practices across the engineering team.
+        \item Shipped multiple UX enhancements, simplifying user interactions and improving satisfaction scores in user surveys.
+
+    \end{itemize}
+}
+
+
+
+\end{textblock}
+
+% 右侧灰色边栏（1/4宽度）
+\begin{textblock}{60}(150,20)  % 调整到右侧位置
     \section{Contacts}
-
     \renewcommand{\arraystretch}{1.1}
-
     \begin{tabular}{rl}
         \contactline{Phone}{(206) 372-0229} \\
-        \contactline{Email}{zqxms@hotmail.com} \\
+        \contactline{Email}{\href{mailto:loadingmit@gmail.com}{loadingmit@gmail.com}} \\
         \contactline{Location}{Bellevue, WA} \\
     \end{tabular}
 
     \section{Education}
-    \leftblock {Northeastern University} { } {
+    \leftblock{Northeastern University}{}{
         \begin{itemize}[-]
-          \item 01/19 - 12/20
+          \item 01/2019 - 12/2020
           \item MS in Computer Science
           \item San Jose, CA
         \end{itemize}
     }
-    \vspace{.5em}
-    
-    \leftblock {Huazhong University of Science and Technology} { } {
-        \begin{itemize}[-]
-          \item 09/10 - 06/14
-          \item BS in Materials Processing and 
-          Control Engineering
-          \item Wuhan, China
-        \end{itemize}
-    }
-    \vspace{.5em}
-    
     
     \section{Skills \& Abilities}
-    
-    \leftblock {Programming Languages} {}{
-    \begin{itemize}[-]
-          \item Java
-          \item Scala
-          \item Ruby
-          \item Python
-          \item Go
-          \item Kotlin
-          \item HTML
-          \item CSS
-          \item Javascript
-          \item C/C++
+    \leftblock{Programming Languages}{}{
+        \begin{itemize}[-]
+          \item Java \item Scala \item Ruby
+          \item Python \item Go \item Kotlin \item HTML \item React \item C/C++
         \end{itemize}
     }
-    
-    \leftblock {Software Skills} {}{
-    \begin{itemize}[-]
-          \item Ruby on Rails
-          \item SpringBoot
-          \item React
-          \item MySQL
-          \item MongoDB
-          \item Node.js
-        \end{itemize}
-    }
-    
 
+    \leftblock{Frameworks \& Tools} {}{
+       \begin{itemize}[-]
+          \item Spring Boot \item Ruby on Rails \item React \item Node.js \item ZIO \item gRPC \item GraphQL \item Atlassian Jira API
+       \end{itemize}
+    }
+
+    \leftblock{Databases \& Cloud}{}{
+        \begin{itemize}[-]
+            \item MySQL \item  PostgreSQL \item MongoDB \item AWS (S3, Lambda, SQS) \item Redis
+        \end{itemize}
+    }
+
+    \leftblock{Practices} {} {
+         \begin {itemize}[-] {
+             \item  System design  \item distributed systems  \item API development \item automation \item agile development \item mentorship
+         }
+         \end{itemize}
+    }
 \end{textblock}
-
-% Main
-
-\vspace{-25pt}  % Change this value to adjust the position of the right
-
-\section{Work Experience}
-
-\block{Flexport | Bellevue, WA | October 2021 - November 2023}
-
-
-\leftblock{Software Engineer}
-{
-    \begin{itemize}[-]
-        \item Developed work management platform with Scala Zio and Java Springboot on backend and React on frontend
-        \item Led a transformative project to enhance user feedback ticketing experience with improved satisfaction and efficiency 
-        \item Initiated to create the generic work item workspace for the forwarding application and established the best practice for work item workspace
-        \item Took part in creating the simple queue service for work items processor to improve work item processing
-        \item Created gRPC APIs to communicate between services on various messages
-        \item Work with operators to address critical needs and provide improvements
-        
-    \end{itemize}
-}
-
-\vspace{.5em}
-
-\leftblock{Software Engineer}
-{
-    \begin{itemize}[-]
-    
-        \item Developed communication platform with Ruby on Rails on backend and React on frontend
-        \item Executed the implementation of Notification Settings page in collaboration with designer and backend engineer
-        \item Implemented product improvement features to make user interaction easier
-        \item Took part in brown bag session to share knowledge
-    \end{itemize}
-}
-
-\begin{comment}
-\vspace{.5em}
-
-\block{Tooling Engineer}
-{Fuyao Glass America | Moraine, OH | July 2016 - March 2019}
-{
-    \begin{itemize}[-]
-        \item In charge of the check fixtures which check the quality of automotive glass
-        \item Lead check fixture development progress with internal engineers and external suppliers
-        \item Review the 3D and 2D CAD model of check fixture to check the detailed design and tolerance=
-    \end{itemize}
-}
-
-\vspace{.5em}
-
-
-\vspace{.5em}
-\block{Full-Stack Software Engineer Intern}
-{SocialChian Inc. | Palo Alto, CA | January 2020 - April 2020}
-{
-
-\begin{itemize}[-]
-    \item Worked on a team of 5 responsible for design and improvement the blockchain app using Ruby on Rails
-    \item Conducted rails programming to implement user records and user authority management
-    \item Implemented front-end UI/UX with React redux to improve user experience and reduced page loading time
-    \item Provided Analytics results about app usages, advertisement feedbacks with Google Analytics
-    \item Code review for peers in team
-\end{itemize}
-}
-
-\section{Projects}
-
-\block{Client-Server Poker with Human-Computer Battling }{}{
-    \begin{itemize}[-]
-        \item Developed a Doudizhu Poker Game by Python using TCP communication and Artificial Intelligence
-        \item Established TCP connection between client and server to communicate players’ actions and responses
-        \item Compared different search algorithms in computer player 1 to get the best card play under current game
-        \item Train computer player 2 with Reinforcement Learning for card play 
-        \item Successfully achieved 100\% card play accuracy 
-        \item Successfully get 70\% of computer winning the game
-    \end{itemize}
-}
-
-\vspace{.5em}
-
-\block{Personal Blog Website}{}{
-    \begin{itemize}[-]
-        \item Developed a full-stack web application for users to write and post blogs online.
-        \item Designed the backend model with Node.js and built the database with MongoDB
-        \item Architected and implemented the interactive web frontend workflow using Bootstrap
-        \item Successfully deployed it to Amazon AWS
-    \end{itemize}
-}
-
-\vspace{.5em}
-
-\block{Music Recommendation System}{}{
-    \begin{itemize}[-]
-        \item Developed a music recommendation system using content-based filtering and collaborative filtering by Python
-        \item Converted the music file to picture format to fit with the CNN architecture 
-        \item Applied ReLU activation function to all layers to introduce non-linearity
-        \item Evaluated the model performance by calculating AUC score
-        \item Successfully predicted 90\% of the verification dataset
-    \end{itemize}
-}
-\end{comment}
-
-\section{Projects}
-\block{Forwarding Application Notification Setting }{}{
-    \begin{itemize}[-]
-        \item Took part in the notification setting page frontend part for both user notification setting and company notification setting with React
-        \item Worked with design, backend engineer and product managers to create the setting pages
-        \item Used GraphQL to handle the interaction between frontend and backend
-        \item Led the frontend team by providing mentorship to other members and holding daily one-on-ones to track progress and answer questions
-        \item Validated the setting actions before sending them to backend
-    \end{itemize}
-}
-\vspace{.5em}   
-
-\block {User Feedback Ticket Experience Improvement } {}{
-    \begin{itemize}[-]
-        \item Investigated and implemented the Atlassian Jira API with Forwarding App to allow users create tickets directly in Forwarding App
-        \item Improved the frontend ticket creation process and corresponding backend API
-        \item Successfully simplified feedback ticket creation experience
-    \end{itemize}
-}
-\vspace{.5em}
-
-\block{Generic Workspace for Forwarding Application} {} {
-    \begin{itemize}[-]
-        \item Led the project to create generic workspace for the work item to provide the infrastructures of the whole company in creating workspace
-        \item Worked with designer to create the frontend using React
-        \item Created generic confirmation GraphQL to save the operations
-        \item Created various functions for operators, eg. document upload 
-    \end{itemize}
-} 
-
-\vspace{.5em}
-
-\block{Work Item Automation} {} {
-    \begin{itemize}[-]
-        \item Took part in the work item automation project together with other eng teams
-        \item Implemented the automated customs documentation by extracting information from previous work items.
-        \item Implemented error handling process and alerts for failed automation work item
-        \item Established a standardized process for automating work items
-    \end{itemize}
-
-
-
-}
 
 \end{document}
