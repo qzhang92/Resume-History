@@ -1,7 +1,7 @@
 # Qi Zhang
 ### Software Engineer | Distributed Systems & Web Applications  
 
-🔹 **2+ years** building **scalable, high-performance** web applications  
+🔹 Strong experience building **scalable, high-performance** web applications  
 🔹 Expertise in **logistics, communication platforms, and workflow automation**  
 🔹 Passionate about **system architecture** and **engineering leadership**  
 
