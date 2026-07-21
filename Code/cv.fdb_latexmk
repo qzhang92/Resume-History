@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1781050733.86986 "/Users/Shared/RelocatedItems/Security/zhangqi/Job hunting/CS/Resume-History/Code/cv.tex" "cv.pdf" "cv" 1781050734.14304 2
-  "/Users/Shared/RelocatedItems/Security/zhangqi/Job hunting/CS/Resume-History/Code/cv.tex" 1781050733.29226 8512 d7b7f432ddf2fc7139f65f87a0e620cd ""
+["pdflatex"] 1784667954.95175 "/Users/Shared/RelocatedItems/Security/zhangqi/Job hunting/CS/Resume-History/Code/cv.tex" "cv.pdf" "cv" 1784667955.24013 2
+  "/Users/Shared/RelocatedItems/Security/zhangqi/Job hunting/CS/Resume-History/Code/cv.tex" 1784667954.23724 9134 98b2625dabcdd45e13d0ef0a894f132d ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty" 1734129479 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1673816307 1016 1c2b89187d12a2768764b83b4945667c ""
@@ -85,8 +85,8 @@
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "cv.aux" 1781050733.86893 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "cv.tex" 1781050733.29226 8512 d7b7f432ddf2fc7139f65f87a0e620cd ""
+  "cv.aux" 1784667954.9504 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "cv.tex" 1784667954.23724 9134 98b2625dabcdd45e13d0ef0a894f132d ""
   (generated)
   "cv.aux"
   "cv.log"
